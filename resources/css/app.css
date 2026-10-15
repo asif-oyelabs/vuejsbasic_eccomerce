@@ -1,0 +1,127 @@
+
+/* ==============================
+   1. Common Color Variables
+============================== */
+:root {
+    --app-primary: #42b883;
+    --app-primary-hover: #369b6e;
+    --app-primary-light: #e8f7f0;
+
+    --app-danger: #ef4444;
+    --app-danger-hover: #dc2626;
+
+    --app-text: #1f2937;
+    --app-muted: #6b7280;
+
+    --app-bg: #f8fafc;
+    --app-white: #ffffff;
+
+    --app-border: #e5e7eb;
+    --app-success: #198754;
+    --app-warning: #f59e0b;
+    --app-info: #0ea5e9;
+}
+
+/* ==============================
+   2. Common Body Styles
+============================== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--app-text);
+    background-color: var(--app-bg);
+}
+
+/* ==============================
+   3. Navbar Active Link
+============================== */
+.navbar .nav-link {
+    color: var(--app-text);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.router-link-active {
+    color: var(--app-primary) !important;
+}
+
+/* Highlight the exact current route */
+.navbar .nav-link.router-link-exact-active {
+    color: var(--app-primary) !important;
+    font-weight: 700;
+}
+
+/* ==============================
+   4. Common Buttons
+============================== */
+.btn-success {
+    --bs-btn-bg: var(--app-primary);
+    --bs-btn-border-color: var(--app-primary);
+    --bs-btn-hover-bg: var(--app-primary-hover);
+    --bs-btn-hover-border-color: var(--app-primary-hover);
+    --bs-btn-active-bg: var(--app-primary-hover);
+    --bs-btn-active-border-color: var(--app-primary-hover);
+}
+
+.btn-danger {
+    --bs-btn-bg: var(--app-danger);
+    --bs-btn-border-color: var(--app-danger);
+    --bs-btn-hover-bg: var(--app-danger-hover);
+    --bs-btn-hover-border-color: var(--app-danger-hover);
+}
+
+/* ==============================
+   5. Common Form Controls
+============================== */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--app-primary);
+    box-shadow: 0 0 0 0.2rem rgb(66 184 131 / 20%);
+}
+
+/* ==============================
+   6. Common Links
+============================== */
+a {
+    color: var(--app-primary);
+}
+
+a:hover {
+    color: var(--app-primary-hover);
+}
+
+/* ==============================
+   7. Common Cards and Tables
+============================== */
+.card {
+    border-color: var(--app-border);
+}
+
+.table thead th {
+    color: var(--app-text);
+    background-color: var(--app-primary-light);
+}
+
+/* ==============================
+   8. Common Feedback Colors
+============================== */
+.text-app-primary {
+    color: var(--app-primary) !important;
+}
+
+.bg-app-primary {
+    background-color: var(--app-primary) !important;
+}
+
+.bg-app-primary-light {
+    background-color: var(--app-primary-light) !important;
+}
+
+.text-app-muted {
+    color: var(--app-muted) !important;
+}
+
+.border-app {
+    border-color: var(--app-border) !important;
+}
