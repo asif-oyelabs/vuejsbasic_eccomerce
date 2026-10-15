@@ -3,6 +3,7 @@ import AdminLogin from '../Admin/auth/AdminLogin.vue';
 import Dashboard from '../Admin/views/Dashboard.vue';
 import Categories from '../Admin/views/Master/Categories.vue';
 import Products from '../Admin/views/Master/Products.vue';
+import Orders from '../Admin/views/Orders.vue';
 
 export default [
     {
@@ -45,6 +46,15 @@ export default [
                 path: 'products',
                 name: 'admin.products',
                 component: Products,
+                meta: {
+                    requiresAuth: true,
+                    requiresAdmin: true,
+                },
+            },
+            {
+                path: 'orders',
+                name: 'admin.orders',
+                component: Orders,
                 meta: {
                     requiresAuth: true,
                     requiresAdmin: true,

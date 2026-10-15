@@ -218,6 +218,8 @@ import { useRoute } from 'vue-router';
 import axios from 'axios';
 import { auth } from '../auth.js';
 import { useToast } from './composables/useToast';
+import { useCart } from './composables/useCart.js';
+const { refreshCart } = useCart();
 
 const { showToast } = useToast();
 
@@ -341,6 +343,8 @@ async function addToCart() {
                 headers: { Accept: 'application/json' },
             }
         );
+
+        await refreshCart();
 
         showToast(response.data?.message || 'Product added to your cart successfully.', 'success');
       

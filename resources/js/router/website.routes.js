@@ -10,6 +10,8 @@ import Contactus from '../views/Contactus.vue';
 import Enquiry from '../views/Enquiry.vue';
 import productlist from '../views/productlist.vue';
 import ProductDetail from '../views/ProductDetail.vue';
+import Cart from '../views/Cart.vue';
+import MyOrders from '../views/MyOrders.vue';
 
 export default [
     {
@@ -66,6 +68,18 @@ export default [
                 path: 'product/:slug',
                 name: 'productdetail',
                 component: ProductDetail,
+            },
+            {
+                path: 'cart',
+                name: 'cart',
+                component: Cart,
+                meta: { requiresAuth: true },
+            },
+            {
+                path: 'my-orders',
+                name: 'myorders',
+                component: MyOrders,
+                meta: { requiresAuth: true },
             },
         ],
     },

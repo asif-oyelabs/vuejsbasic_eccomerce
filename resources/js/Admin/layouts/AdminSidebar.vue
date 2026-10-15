@@ -20,6 +20,11 @@ const menuItems = [
         path: '/admin/products',
         icon: 'bi-box-seam',
     },
+    {
+        label: 'Orders',
+        path: '/admin/orders',
+        icon: 'bi-receipt',
+    },
 ];
 
 function isActive(path) {

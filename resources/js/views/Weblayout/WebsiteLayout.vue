@@ -1,10 +1,26 @@
 <script setup>
+import { watch } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 import { auth } from '../../auth.js';
 import AppFooter from './AppFooter.vue';
+import { useCart } from '../composables/useCart.js';
 
 const router = useRouter();
+const { cartCount, refreshCart, clearCart } = useCart();
+// Load cart count when the user logs in or the layout is mounted.
+watch(
+    () => auth.user,
+    (user) => {
+        if (user) {
+            refreshCart();
+        } else {
+            clearCart();
+        }
+    },
+    { immediate: true }
+);
+
 
 function goHome() {
     router.push('/');
@@ -55,18 +71,36 @@ async function logout() {
                         <router-link to="/" class="nav-link">
                             Home
                         </router-link>
+                        <router-link to="/productlist" class="nav-link">
+                            Products
+                        </router-link>
 
                         <template v-if="auth.user">
                             <router-link to="/profile" class="nav-link">
                                 My Profile
                             </router-link>
+                           
+                                <router-link
+                                    :to="{ name: 'cart' }"
+                                    class="nav-link cart-nav-link"
+                                >
+                                    <span class="cart-icon-wrap">
+                                        <i class="bi bi-cart3"></i>
 
-                            <router-link to="/users" class="nav-link">
-                                Users
-                            </router-link>
+                                        <span
+                                            v-if="cartCount > 0"
+                                            class="cart-count-badge"
+                                        >
+                                            {{ cartCount > 99 ? '99+' : cartCount }}
+                                        </span>
+                                    </span>
 
-                            <router-link to="/enquiry" class="nav-link">
-                                Enquiry
+                                    Cart
+                                </router-link>
+
+                            <router-link :to="{ name: 'myorders' }" class="nav-link">
+                                <i class="bi bi-box-seam me-1"></i>
+                                My Orders
                             </router-link>
 
                             <button
@@ -106,3 +140,39 @@ async function logout() {
         <AppFooter />
     </div>
 </template>
+
+
+<style scoped>
+.cart-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.cart-icon-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.cart-count-badge {
+    position: absolute;
+    top: -9px;
+    right: -11px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background: #dc3545;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    border: 2px solid #fff;
+}
+</style>

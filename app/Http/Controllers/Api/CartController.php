@@ -12,6 +12,59 @@ use Illuminate\Validation\ValidationException;
 
 class CartController extends Controller
 {
+
+    public function index(Request $request)
+    {
+        $cartItems = CartItem::where('user_id', $request->user()->id)
+            ->with([
+                'product:id,name,slug,main_image,price,qty,status,category_id',
+                'product.category:id,name',
+            ])
+            ->latest()
+            ->get();
+
+        $items = $cartItems->map(function ($item) {
+            $product = $item->product;
+
+            if (!$product) {
+                return null;
+            }
+
+            $price = (float) $product->price;
+            $quantity = (int) $item->quantity;
+
+            $image = $product->main_image
+                ? asset('storage/' . ltrim($product->main_image, '/'))
+                : null;
+
+            return [
+                'id' => $item->id,
+                'product_id' => $product->id,
+                'name' => $product->name,
+                'slug' => $product->slug,
+                'image' => $image,
+                'price' => $price,
+                'quantity' => $quantity,
+                'stock' => (int) $product->qty,
+                'line_total' => round($price * $quantity, 2),
+                'category' => $product->category?->name,
+            ];
+        })->filter()->values();
+
+        $subtotal = round($items->sum('line_total'), 2);
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'items' => $items,
+                'item_count' => $items->sum('quantity'),
+                'subtotal' => $subtotal,
+                'shipping_amount' => 0,
+                'total_amount' => $subtotal,
+            ],
+        ]);
+    }
+
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -81,4 +134,51 @@ class CartController extends Controller
             ],
         ], 201);
     }
+
+    public function update(Request $request, int $id)
+    {
+        $validated = $request->validate([
+            'quantity' => ['required', 'integer', 'min:1'],
+        ]);
+
+        $cartItem = CartItem::where('user_id', $request->user()->id)
+            ->where('id', $id)
+            ->firstOrFail();
+
+        $product = Product::whereKey($cartItem->product_id)
+            ->where('status', true)
+            ->firstOrFail();
+
+        if ($validated['quantity'] > $product->qty) {
+            return response()->json([
+                'success' => false,
+                'message' => "Only {$product->qty} unit(s) are available.",
+            ], 422);
+        }
+
+        $cartItem->update([
+            'quantity' => $validated['quantity'],
+            'price' => $product->price,
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Cart quantity updated successfully.',
+        ]);
+    }
+
+    public function destroy(Request $request, int $id)
+    {
+        $cartItem = CartItem::where('user_id', $request->user()->id)
+            ->where('id', $id)
+            ->firstOrFail();
+
+        $cartItem->delete();
+
+        return response()->json([
+            'success' => true,
+                'message' => 'Product removed from your cart.',
+            ]);
+        }
+
 }
