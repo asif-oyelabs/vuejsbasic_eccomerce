@@ -1,6 +1,7 @@
 <script setup>
 import AdminSidebar from './AdminSidebar.vue';
 import AdminNavbar from './AdminNavbar.vue';
+import AdminToast from '../views/components/AdminToast.vue';
 </script>
 
 <template>
@@ -20,6 +21,7 @@ import AdminNavbar from './AdminNavbar.vue';
             </footer>
         </div>
     </div>
+    <AdminToast />
 </template>
 
 <style scoped>

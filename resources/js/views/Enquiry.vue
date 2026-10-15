@@ -3,7 +3,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 import { auth, loadUser } from '../auth';
-import EnquiryFormModal from '../components/EnquiryFormModal.vue';
+import EnquiryFormModal from './webmodal/EnquiryFormModal.vue';
 
 const router = useRouter();
 

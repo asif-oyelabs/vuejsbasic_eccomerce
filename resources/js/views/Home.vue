@@ -1,449 +1,956 @@
+
 <template>
-    <main class="home-page">
-
-        <!-- Hero Section -->
-        <section class="home-hero d-flex align-items-center py-5">
-            <div class="container py-4 py-lg-5">
-                <div class="row align-items-center g-5">
-
-                    <!-- Hero Content -->
-                    <div class="col-lg-7 text-center text-lg-start">
-
-                        <span
-                            class="badge rounded-pill bg-app-primary-light text-app-primary px-3 py-2 mb-4"
-                        >
-                            <span class="me-1">✦</span>
-                            Laravel 13 + Vue 3
+    <main class="shop-home">
+        <!-- Hero section -->
+        <section class="shop-hero">
+            <div class="container py-5">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-lg-6">
+                        <span class="hero-label">
+                            <i class="bi bi-stars me-2"></i>
+                            YOUR EVERYDAY SHOPPING DESTINATION
                         </span>
 
-                        <h1 class="display-3 fw-bold lh-sm mb-4">
-                            Build Something
-                            <span class="text-app-primary">
-                                Amazing.
-                            </span>
+                        <h1 class="hero-title mt-4 mb-3">
+                            Find your next
+                            <span>favourite thing.</span>
                         </h1>
 
-                        <p class="lead text-app-muted lh-lg mb-4 mx-auto mx-lg-0 home-description">
-                            A modern web application built with Laravel
-                            and Vue.js. Manage your account, explore features,
-                            and experience a clean and simple interface.
+                        <p class="hero-description mb-4">
+                            Discover products you love, explore popular categories,
+                            and find great picks for your everyday needs.
                         </p>
 
-                        <div
-                            class="d-flex justify-content-center justify-content-lg-start gap-3 flex-wrap"
-                        >
-                            <router-link
-                                to="/login"
-                                class="btn btn-success btn-lg px-4 py-3 rounded-3"
-                            >
-                                Get Started
-                                <span class="ms-2">→</span>
+                        <div class="d-flex flex-wrap gap-3">
+                            <router-link to="/productlist" class="btn shop-primary-btn">
+                                Shop Products
+                                <i class="bi bi-arrow-right ms-2"></i>
                             </router-link>
 
-                            <router-link
-                                to="/register"
-                                class="btn btn-outline-secondary btn-lg px-4 py-3 rounded-3"
-                            >
-                                Create Account
-                            </router-link>
+                            <a href="#shop-categories" class="btn shop-outline-btn">
+                                Explore Categories
+                            </a>
                         </div>
 
-                        <div
-                            class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 mt-4 pt-2 flex-wrap"
-                        >
-                            <span class="text-app-muted small">
-                                <span class="text-app-primary me-1">✓</span>
-                                Secure authentication
-                            </span>
-
-                            <span class="text-app-muted small">
-                                <span class="text-app-primary me-1">✓</span>
-                                Responsive design
-                            </span>
+                        <div class="hero-benefits mt-4">
+                            <span><i class="bi bi-check-circle-fill"></i> Easy shopping</span>
+                            <span><i class="bi bi-grid-fill"></i> Multiple categories</span>
                         </div>
                     </div>
 
-                    <!-- Hero Visual -->
-                    <div class="col-lg-5">
-                        <div class="hero-visual mx-auto">
-                            <div class="hero-glow"></div>
+                    <div class="col-lg-6">
+                        <div class="hero-art">
+                            <div class="hero-orb hero-orb-one"></div>
+                            <div class="hero-orb hero-orb-two"></div>
 
-                            <div class="hero-main-card card border-0 shadow-lg rounded-4 p-4">
-                                <div
-                                    class="d-flex align-items-center justify-content-between mb-4"
-                                >
+                            <div class="hero-shopping-card">
+                                <div class="shopping-card-top">
                                     <div>
-                                        <p class="text-app-muted small mb-1">
-                                            YOUR WORKSPACE
-                                        </p>
-                                        <h5 class="fw-bold mb-0">
-                                            Welcome Back!
-                                        </h5>
+                                        <small>YOUR NEXT FIND</small>
+                                        <h5>Made for you</h5>
                                     </div>
-
-                                    <div class="hero-icon">
-                                        <span>✦</span>
+                                    <div class="shopping-bag-icon">
+                                        <i class="bi bi-bag-heart-fill"></i>
                                     </div>
                                 </div>
 
-                                <div class="hero-profile-card rounded-4 p-3 mb-3">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="profile-avatar">
-                                            U
-                                        </div>
-
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-1">
-                                                Your Account
-                                            </h6>
-                                            <p class="small text-app-muted mb-0">
-                                                Everything in one place
-                                            </p>
-                                        </div>
-
-                                        <span class="status-dot"></span>
+                                <div class="shopping-illustration">
+                                    <div class="illustration-circle">
+                                        <i class="bi bi-bag-heart-fill"></i>
                                     </div>
+                                    <div class="illustration-spark spark-one">✦</div>
+                                    <div class="illustration-spark spark-two">✧</div>
+                                    <div class="illustration-spark spark-three">✦</div>
                                 </div>
 
-                                <div class="row g-3">
-                                    <div class="col-6">
-                                        <div class="feature-mini-card rounded-4 p-3 h-100">
-                                            <div class="mini-icon mb-3">
-                                                <span>⚡</span>
-                                            </div>
-                                            <h6 class="fw-bold mb-1">
-                                                Fast
-                                            </h6>
-                                            <p class="small text-app-muted mb-0">
-                                                Smooth experience
-                                            </p>
-                                        </div>
+                                <div class="shopping-card-bottom">
+                                    <div>
+                                        <span class="small text-muted">A little something</span>
+                                        <div class="fw-bold">Just your style</div>
                                     </div>
+                                    <span class="shopping-arrow">
+                                        <i class="bi bi-arrow-up-right"></i>
+                                    </span>
+                                </div>
+                            </div>
 
-                                    <div class="col-6">
-                                        <div class="feature-mini-card rounded-4 p-3 h-100">
-                                            <div class="mini-icon mb-3">
-                                                <span>🛡</span>
-                                            </div>
-                                            <h6 class="fw-bold mb-1">
-                                                Secure
-                                            </h6>
-                                            <p class="small text-app-muted mb-0">
-                                                Protected access
-                                            </p>
-                                        </div>
-                                    </div>
+                            <div class="hero-floating-tag tag-top">
+                                <i class="bi bi-heart-fill me-2"></i>
+                                Find what you love
+                            </div>
+
+                            <div class="hero-floating-tag tag-bottom">
+                                <i class="bi bi-bag-check-fill me-2"></i>
+                                Happy shopping
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section id="shop-categories" class="section-space">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-eyebrow">EXPLORE THE STORE</span>
+                        <h2>Shop by category</h2>
+                        <p>Find the right products for what you need.</p>
+                    </div>
+
+                    <router-link to="/productlist" class="section-link">
+                        View all <i class="bi bi-arrow-right ms-1"></i>
+                    </router-link>
+                </div>
+
+                <div v-if="categoriesLoading" class="row g-3">
+                    <div v-for="n in 5" :key="n" class="col-6 col-md-4 col-lg">
+                        <div class="category-skeleton"></div>
+                    </div>
+                </div>
+
+                <div v-else-if="categories.length" class="row g-3">
+                    <div
+                        v-for="(category, index) in categories"
+                        :key="category.id"
+                        class="col-6 col-md-4 col-lg"
+                    >
+                        <router-link
+                            :to="{
+                                path: '/productlist',
+                                query: { category_id: String(category.id) }
+                            }"
+                            class="category-card"
+                        >
+                            <div class="category-image-wrap" :class="`category-tone-${index % 5}`">
+                                <img
+                                    v-if="category.image_url || category.image"
+                                    :src="category.image_url || category.image"
+                                    :alt="category.name"
+                                    class="category-image"
+                                    @error="hideBrokenImage"
+                                >
+
+                                <div v-if="!category.image_url && !category.image" class="category-placeholder">
+                                    <i class="bi bi-grid-1x2"></i>
+                                </div>
+                            </div>
+
+                            <div class="category-card-info">
+                                <h6>{{ category.name }}</h6>
+                                <span>Explore <i class="bi bi-arrow-up-right"></i></span>
+                            </div>
+                        </router-link>
+                    </div>
+                </div>
+
+                <div v-else class="empty-state">
+                    <i class="bi bi-grid fs-2"></i>
+                    <p class="mb-0 mt-2">Categories will appear here soon.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest products -->
+        <section class="latest-products-section section-space">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-eyebrow">FRESH FINDS</span>
+                        <h2>Latest products</h2>
+                        <p>Take a look at what's new in our store.</p>
+                    </div>
+
+                    <router-link to="/productlist" class="section-link">
+                        View all products <i class="bi bi-arrow-right ms-1"></i>
+                    </router-link>
+                </div>
+
+                <div v-if="productsLoading" class="row g-4">
+                    <div v-for="n in 4" :key="n" class="col-6 col-md-4 col-lg-3">
+                        <div class="product-skeleton"></div>
+                    </div>
+                </div>
+
+                <div v-else-if="products.length" class="row g-4">
+                    <div
+                        v-for="product in products"
+                        :key="product.id"
+                        class="col-6 col-md-4 col-lg-3"
+                    >
+                        <router-link
+                            :to="{
+                                path: '/productlist',
+                                query: { search: product.name }
+                            }"
+                            class="product-card"
+                        >
+                            <div class="product-image-wrap">
+                                <img
+                                    v-if="product.main_image_url || product.main_image"
+                                    :src="product.main_image_url || product.main_image"
+                                    :alt="product.name"
+                                    class="product-image"
+                                    loading="lazy"
+                                    @error="hideBrokenImage"
+                                >
+
+                                <div v-else class="product-image-placeholder">
+                                    <i class="bi bi-image"></i>
                                 </div>
 
-                                <div class="hero-footer mt-4 pt-3">
-                                    <div
-                                        class="d-flex align-items-center justify-content-between"
+                                <span class="product-new-badge">NEW</span>
+
+                                <span class="product-quick-icon">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </span>
+                            </div>
+
+                            <div class="product-card-body">
+                                <span class="product-category">
+                                    {{ product.category?.name || 'General' }}
+                                </span>
+
+                                <h6 class="product-name">{{ product.name }}</h6>
+
+                                <div class="product-prices">
+                                    <span class="product-price">
+                                        {{ formatPrice(product.price) }}
+                                    </span>
+
+                                    <span
+                                        v-if="Number(product.original_price) > Number(product.price)"
+                                        class="product-original-price"
                                     >
-                                        <span class="small text-app-muted">
-                                            Powered by
-                                        </span>
-
-                                        <div class="d-flex gap-2">
-                                            <span class="tech-pill">Laravel</span>
-                                            <span class="tech-pill">Vue.js</span>
-                                        </div>
-                                    </div>
+                                        {{ formatPrice(product.original_price) }}
+                                    </span>
                                 </div>
                             </div>
-
-                            <div class="floating-badge floating-badge-top shadow-sm">
-                                <span class="text-app-primary me-2">✓</span>
-                                Easy to use
-                            </div>
-
-                            <div class="floating-badge floating-badge-bottom shadow-sm">
-                                <span class="me-2">🚀</span>
-                                Ready to explore
-                            </div>
-                        </div>
+                        </router-link>
                     </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="py-5">
-            <div class="container py-4">
-
-                <div class="text-center mx-auto mb-5 home-section-heading">
-                    <span
-                        class="badge rounded-pill bg-app-primary-light text-app-primary px-3 py-2 mb-3"
-                    >
-                        WHAT YOU GET
-                    </span>
-
-                    <h2 class="fw-bold mb-3">
-                        Everything you need to get started
-                    </h2>
-
-                    <p class="text-app-muted lh-lg mb-0">
-                        A simple and organized experience designed to make
-                        managing your application easier.
-                    </p>
                 </div>
 
-                <div class="row g-4">
-
-                    <div class="col-md-4">
-                        <div class="card feature-card h-100 border-0 shadow-sm rounded-4 p-4">
-                            <div class="feature-icon mb-4">
-                                <span>🔐</span>
-                            </div>
-
-                            <h5 class="fw-bold mb-3">
-                                Secure Authentication
-                            </h5>
-
-                            <p class="text-app-muted lh-lg mb-0">
-                                Sign in securely, create an account, and
-                                manage your authenticated session.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card feature-card h-100 border-0 shadow-sm rounded-4 p-4">
-                            <div class="feature-icon mb-4">
-                                <span>👤</span>
-                            </div>
-
-                            <h5 class="fw-bold mb-3">
-                                Profile Management
-                            </h5>
-
-                            <p class="text-app-muted lh-lg mb-0">
-                                Update your personal information and profile
-                                details through a simple interface.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card feature-card h-100 border-0 shadow-sm rounded-4 p-4">
-                            <div class="feature-icon mb-4">
-                                <span>📊</span>
-                            </div>
-
-                            <h5 class="fw-bold mb-3">
-                                User Management
-                            </h5>
-
-                            <p class="text-app-muted lh-lg mb-0">
-                                Organize user records with convenient
-                                management tools and a responsive layout.
-                            </p>
-                        </div>
-                    </div>
-
+                <div v-else class="empty-state">
+                    <i class="bi bi-bag fs-2"></i>
+                    <p class="mb-0 mt-2">New products are coming soon.</p>
                 </div>
-            </div>
-        </section>
 
-        <!-- Bottom CTA -->
-        <section class="pb-5">
-            <div class="container pb-4">
-                <div class="home-cta rounded-4 p-4 p-md-5 text-center">
-                    <h2 class="fw-bold mb-3">
-                        Ready to get started?
-                    </h2>
-
-                    <p class="text-app-muted mb-4">
-                        Create your account and explore your application.
-                    </p>
-
-                    <router-link
-                        to="/register"
-                        class="btn btn-success btn-lg px-4 py-3 rounded-3"
-                    >
-                        Create Your Account
-                        <span class="ms-2">→</span>
+                <div class="text-center mt-5">
+                    <router-link to="/productlist" class="btn shop-primary-btn">
+                        Explore All Products
+                        <i class="bi bi-arrow-right ms-2"></i>
                     </router-link>
                 </div>
             </div>
         </section>
 
+        <!-- Shopping CTA -->
+        <section class="container pb-5">
+            <div class="shopping-cta">
+                <div>
+                    <span class="section-eyebrow">YOUR NEXT DISCOVERY</span>
+                    <h2>Something good is waiting for you.</h2>
+                    <p class="mb-0">Explore our collection and find your next favourite.</p>
+                </div>
+
+                <router-link to="/productlist" class="btn cta-light-btn">
+                    Start Exploring <i class="bi bi-arrow-right ms-2"></i>
+                </router-link>
+            </div>
+        </section>
     </main>
 </template>
 
+<script setup>
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+
+const categories = ref([]);
+const products = ref([]);
+
+const categoriesLoading = ref(true);
+const productsLoading = ref(true);
+
+async function loadCategories() {
+    categoriesLoading.value = true;
+
+    try {
+        const response = await axios.get('/api/home/categories', {
+            params: {
+                per_page: 5,
+                sort: 'latest',
+            },
+        });
+
+        const result = response.data?.data;
+
+        const items = Array.isArray(result)
+            ? result
+            : (result?.data ?? []);
+
+        categories.value = items.slice(0, 5);
+    } catch (error) {
+        console.error('Unable to load homepage categories:', error);
+        categories.value = [];
+    } finally {
+        categoriesLoading.value = false;
+    }
+}
+
+async function loadLatestProducts() {
+    productsLoading.value = true;
+
+    try {
+        const response = await axios.get('/api/home/products', {
+            params: {
+                per_page: 8,
+                sort: 'latest',
+            },
+        });
+
+        const result = response.data?.data;
+
+        const items = Array.isArray(result)
+            ? result
+            : (result?.data ?? []);
+
+        products.value = items.slice(0, 8);
+    } catch (error) {
+        console.error('Unable to load homepage products:', error);
+        products.value = [];
+    } finally {
+        productsLoading.value = false;
+    }
+}
+
+function formatPrice(value) {
+    return new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 2,
+    }).format(Number(value ?? 0));
+}
+
+function hideBrokenImage(event) {
+    event.target.style.display = 'none';
+}
+
+onMounted(() => {
+    loadCategories();
+    loadLatestProducts();
+});
+</script>
+
 <style scoped>
-.home-page {
-    overflow: hidden;
-}
-
-.home-hero {
-    position: relative;
-    background:
-        radial-gradient(
-            circle at 85% 15%,
-            var(--app-primary-light),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            var(--app-white) 0%,
-            var(--app-bg) 100%
-        );
-}
-
-.home-description {
-    max-width: 560px;
-}
-
-.home-section-heading {
-    max-width: 650px;
-}
-
-.hero-visual {
-    position: relative;
-    max-width: 430px;
-    padding: 25px 10px;
-}
-
-.hero-glow {
-    position: absolute;
-    inset: 12% 5%;
-    border-radius: 50%;
-    background: var(--app-primary-light);
-    filter: blur(35px);
-    opacity: 0.9;
-}
-
-.hero-main-card {
-    position: relative;
-    z-index: 1;
+.shop-home {
+    color: var(--app-text);
     background: var(--app-white);
 }
 
-.hero-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
-    background: var(--app-primary-light);
+.shop-hero {
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 20%, #dff7e9 0, transparent 28%),
+        linear-gradient(135deg, #ffffff 0%, #f3fbf6 100%);
+}
+
+.hero-label,
+.section-eyebrow {
+    display: inline-block;
+    color: var(--app-primary-hover);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.hero-label {
+    padding: 10px 14px;
+    border: 1px solid #cceedd;
+    border-radius: 30px;
+    background: #ffffff;
+}
+
+.hero-title {
+    max-width: 650px;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    font-weight: 800;
+}
+
+.hero-title span {
+    display: block;
     color: var(--app-primary);
-    font-size: 24px;
 }
 
-.hero-profile-card,
-.feature-mini-card {
-    background: var(--app-bg);
-    border: 1px solid var(--app-border);
+.hero-description {
+    max-width: 530px;
+    color: var(--app-muted);
+    font-size: 1.08rem;
+    line-height: 1.8;
 }
 
-.profile-avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-    border-radius: 16px;
+.shop-primary-btn {
+    padding: 13px 23px;
+    border-radius: 10px;
+    color: white;
     background: var(--app-primary);
-    color: var(--app-white);
-    font-size: 22px;
+    border: 1px solid var(--app-primary);
     font-weight: 700;
 }
 
-.status-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--app-success);
-    box-shadow: 0 0 0 4px var(--app-primary-light);
+.shop-primary-btn:hover {
+    color: white;
+    background: var(--app-primary-hover);
+    border-color: var(--app-primary-hover);
 }
 
-.mini-icon,
-.feature-icon {
+.shop-outline-btn {
+    padding: 13px 20px;
+    border: 1px solid var(--app-border);
+    border-radius: 10px;
+    background: white;
+    color: var(--app-text);
+    font-weight: 600;
+}
+
+.shop-outline-btn:hover {
+    border-color: var(--app-primary);
+    color: var(--app-primary-hover);
+}
+
+.hero-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: var(--app-muted);
+    font-size: 0.85rem;
+}
+
+.hero-benefits i {
+    margin-right: 5px;
+    color: var(--app-primary);
+}
+
+.hero-art {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 54px;
-    height: 54px;
-    border-radius: 16px;
-    background: var(--app-primary-light);
-    font-size: 25px;
+    min-height: 420px;
 }
 
-.hero-footer {
+.hero-orb {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hero-orb-one {
+    width: 330px;
+    height: 330px;
+    background: #d9f3e4;
+}
+
+.hero-orb-two {
+    width: 240px;
+    height: 240px;
+    border: 1px solid #bce8cf;
+}
+
+.hero-shopping-card {
+    position: relative;
+    z-index: 1;
+    width: min(360px, 88%);
+    padding: 24px;
+    border: 1px solid rgb(255 255 255 / 90%);
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 25px 70px rgb(28 89 56 / 13%);
+    transform: rotate(-2deg);
+}
+
+.shopping-card-top,
+.shopping-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shopping-card-top small {
+    color: var(--app-muted);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.shopping-card-top h5 {
+    margin: 5px 0 0;
+    font-weight: 800;
+}
+
+.shopping-bag-icon {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 15px;
+    color: var(--app-primary-hover);
+    background: var(--app-primary-light);
+    font-size: 1.4rem;
+}
+
+.shopping-illustration {
+    position: relative;
+    display: grid;
+    place-items: center;
+    height: 220px;
+    margin: 18px 0;
+    overflow: hidden;
+    border-radius: 18px;
+    background: linear-gradient(140deg, #e8f7f0, #f7fcf8);
+}
+
+.illustration-circle {
+    display: grid;
+    place-items: center;
+    width: 135px;
+    height: 135px;
+    border-radius: 40px;
+    color: white;
+    background: linear-gradient(145deg, #54c58e, #25875b);
+    box-shadow: 0 18px 35px rgb(37 135 91 / 25%);
+    font-size: 4rem;
+    transform: rotate(-8deg);
+}
+
+.illustration-spark {
+    position: absolute;
+    color: var(--app-primary);
+    font-size: 2rem;
+}
+
+.spark-one {
+    top: 25px;
+    left: 28px;
+}
+
+.spark-two {
+    right: 32px;
+    top: 45px;
+}
+
+.spark-three {
+    bottom: 25px;
+    right: 48px;
+}
+
+.shopping-card-bottom {
+    padding-top: 14px;
     border-top: 1px solid var(--app-border);
 }
 
-.tech-pill {
-    padding: 5px 10px;
-    border-radius: 8px;
-    background: var(--app-primary-light);
-    color: var(--app-primary);
-    font-size: 12px;
-    font-weight: 600;
+.shopping-arrow {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    color: white;
+    background: var(--app-primary);
 }
 
-.floating-badge {
+.hero-floating-tag {
     position: absolute;
     z-index: 2;
-    padding: 12px 16px;
+    padding: 12px 15px;
     border: 1px solid var(--app-border);
     border-radius: 12px;
-    background: var(--app-white);
-    font-size: 13px;
-    font-weight: 600;
+    background: white;
+    box-shadow: 0 8px 25px rgb(0 0 0 / 7%);
+    font-size: 0.8rem;
+    font-weight: 700;
 }
 
-.floating-badge-top {
-    top: 2px;
-    right: -5px;
+.hero-floating-tag i {
+    color: var(--app-primary);
 }
 
-.floating-badge-bottom {
-    bottom: 2px;
-    left: -8px;
+.tag-top {
+    top: 65px;
+    right: 0;
 }
 
-.feature-card {
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+.tag-bottom {
+    bottom: 55px;
+    left: 0;
 }
 
-.feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 1rem 2rem rgb(31 41 55 / 8%) !important;
+.section-space {
+    padding: 70px 0;
 }
 
-.home-cta {
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    margin: 8px 0;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: var(--app-muted);
+}
+
+.section-link {
+    flex-shrink: 0;
+    color: var(--app-primary-hover);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.section-link:hover {
+    color: var(--app-primary);
+}
+
+.category-card {
+    display: block;
+    height: 100%;
+    padding: 10px;
     border: 1px solid var(--app-border);
-    background:
-        radial-gradient(
-            circle at top right,
-            var(--app-primary-light),
-            transparent 45%
-        ),
-        var(--app-white);
+    border-radius: 16px;
+    color: inherit;
+    background: white;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-@media (max-width: 575.98px) {
-    .home-hero h1 {
-        font-size: 2.6rem;
+.category-card:hover {
+    color: inherit;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgb(31 41 55 / 8%);
+}
+
+.category-image-wrap {
+    display: grid;
+    place-items: center;
+    height: 125px;
+    overflow: hidden;
+    border-radius: 11px;
+}
+
+.category-tone-0 {
+    background: #e8f7f0;
+}
+
+.category-tone-1 {
+    background: #fff2e5;
+}
+
+.category-tone-2 {
+    background: #eaf0ff;
+}
+
+.category-tone-3 {
+    background: #f7eafb;
+}
+
+.category-tone-4 {
+    background: #fff5d9;
+}
+
+.category-image {
+    width: 140px;
+    height: 140px;
+    padding: 10px;
+    object-fit: contain;
+}
+
+.category-placeholder {
+    color: var(--app-primary);
+    font-size: 2.3rem;
+}
+
+.category-card-info {
+    padding: 14px 4px 5px;
+}
+
+.category-card-info h6 {
+    overflow: hidden;
+    margin-bottom: 8px;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.category-card-info span {
+    color: var(--app-muted);
+    font-size: 0.78rem;
+}
+
+.category-card-info span i {
+    margin-left: 4px;
+    color: var(--app-primary);
+}
+
+.latest-products-section {
+    background: var(--app-bg);
+}
+
+.product-card {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--app-border);
+    border-radius: 16px;
+    background: white;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    color: inherit;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgb(31 41 55 / 9%);
+}
+
+.product-image-wrap {
+    position: relative;
+    display: grid;
+    place-items: center;
+    height: 235px;
+    overflow: hidden;
+    background: #f7f9f8;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.04);
+}
+
+.product-image-placeholder {
+    color: #b7c6bd;
+    font-size: 3rem;
+}
+
+.product-new-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    color: var(--app-primary-hover);
+    background: var(--app-primary-light);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.product-quick-icon {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: var(--app-text);
+    background: white;
+    box-shadow: 0 3px 12px rgb(0 0 0 / 8%);
+}
+
+.product-card-body {
+    padding: 16px;
+}
+
+.product-category {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 7px;
+    color: var(--app-muted);
+    font-size: 0.75rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product-name {
+    display: -webkit-box;
+    min-height: 42px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.45;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.product-prices {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.product-price {
+    color: var(--app-primary-hover);
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.product-original-price {
+    color: var(--app-muted);
+    font-size: 0.8rem;
+    text-decoration: line-through;
+}
+
+.category-skeleton,
+.product-skeleton {
+    border-radius: 16px;
+    background: linear-gradient(90deg, #edf1ee 25%, #f8faf8 50%, #edf1ee 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.4s infinite;
+}
+
+.category-skeleton {
+    height: 205px;
+}
+
+.product-skeleton {
+    height: 340px;
+}
+
+@keyframes skeleton-loading {
+    to {
+        background-position: -200% 0;
+    }
+}
+
+.empty-state {
+    padding: 50px 20px;
+    border: 1px dashed var(--app-border);
+    border-radius: 16px;
+    color: var(--app-muted);
+    text-align: center;
+    background: white;
+}
+
+.shopping-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 42px;
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at 90% 10%, #d7f2e3 0, transparent 35%),
+        #f1faf5;
+    border: 1px solid #dcefe3;
+}
+
+.shopping-cta h2 {
+    margin: 10px 0;
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    font-weight: 800;
+}
+
+.shopping-cta p {
+    color: var(--app-muted);
+}
+
+.cta-light-btn {
+    flex-shrink: 0;
+    padding: 13px 20px;
+    border-radius: 10px;
+    color: white;
+    background: var(--app-primary);
+    font-weight: 700;
+}
+
+.cta-light-btn:hover {
+    color: white;
+    background: var(--app-primary-hover);
+}
+
+@media (max-width: 767.98px) {
+    .hero-art {
+        min-height: 360px;
     }
 
-    .floating-badge {
-        padding: 9px 11px;
-        font-size: 11px;
+    .hero-orb-one {
+        width: 280px;
+        height: 280px;
     }
 
-    .floating-badge-top {
-        right: -3px;
+    .hero-orb-two {
+        width: 210px;
+        height: 210px;
     }
 
-    .floating-badge-bottom {
-        left: -3px;
+    .hero-shopping-card {
+        padding: 18px;
+    }
+
+    .shopping-illustration {
+        height: 175px;
+    }
+
+    .section-space {
+        padding: 48px 0;
+    }
+
+    .category-image-wrap {
+        height: 110px;
+    }
+
+    .product-image-wrap {
+        height: 190px;
+    }
+
+    .product-card-body {
+        padding: 12px;
+    }
+
+    .shopping-cta {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 28px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-title {
+        letter-spacing: -1px;
+    }
+
+    .product-image-wrap {
+        height: 155px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero-floating-tag {
+        font-size: 0.7rem;
     }
 }
 </style>

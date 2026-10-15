@@ -1,5 +1,5 @@
 <script setup>
-import { auth } from '../../../auth.js';
+import { auth } from '../../auth.js';
 import axios from 'axios';
 import { useRouter } from 'vue-router';
 

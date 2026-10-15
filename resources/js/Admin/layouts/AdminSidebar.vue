@@ -1,3 +1,4 @@
+
 <script setup>
 import { useRoute } from 'vue-router';
 
@@ -9,7 +10,22 @@ const menuItems = [
         path: '/admin/dashboard',
         icon: 'bi-speedometer2',
     },
+    {
+        label: 'Categories',
+        path: '/admin/categories',
+        icon: 'bi-grid',
+    },
+    {
+        label: 'Products',
+        path: '/admin/products',
+        icon: 'bi-box-seam',
+    },
 ];
+
+function isActive(path) {
+    return route.path === path ||
+        (path !== '/admin/dashboard' && route.path.startsWith(`${path}/`));
+}
 </script>
 
 <template>
@@ -30,9 +46,7 @@ const menuItems = [
 
         <div class="sidebar-divider"></div>
 
-        <div class="sidebar-section-title">
-            WORKSPACE
-        </div>
+        <div class="sidebar-section-title">WORKSPACE</div>
 
         <nav class="nav flex-column gap-2">
             <RouterLink
@@ -40,7 +54,7 @@ const menuItems = [
                 :key="item.path"
                 :to="item.path"
                 class="sidebar-link"
-                :class="{ active: route.path === item.path }"
+                :class="{ active: isActive(item.path) }"
             >
                 <span class="sidebar-link-icon">
                     <i :class="['bi', item.icon]"></i>
@@ -49,7 +63,7 @@ const menuItems = [
                 <span>{{ item.label }}</span>
 
                 <i
-                    v-if="route.path === item.path"
+                    v-if="isActive(item.path)"
                     class="bi bi-chevron-right ms-auto active-arrow"
                 ></i>
             </RouterLink>
@@ -113,7 +127,8 @@ const menuItems = [
     letter-spacing: -0.4px;
 }
 
-.brand-text small {
+.brand-text small,
+.sidebar-bottom small {
     color: var(--app-muted);
     font-size: 11px;
 }
@@ -191,11 +206,6 @@ const menuItems = [
     background: var(--app-primary-light);
     color: var(--app-primary-hover);
     font-size: 19px;
-}
-
-.sidebar-bottom small {
-    color: var(--app-muted);
-    font-size: 11px;
 }
 
 @media (max-width: 767.98px) {
